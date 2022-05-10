@@ -1,14 +1,14 @@
 namespace Observer
 {
-    public class TemperatureReporter : IObserver
+    public class TemperatureReporter : IObserver<Temperature>
     {
         private bool first = true;
 
         private Temperature last;
 
-        private ISubject provider;
+        private ISubject<Temperature> provider;
 
-        public void StartReporting(ISubject provider)
+        public void StartReporting(ISubject<Temperature> provider)
         {
             this.provider = provider;
             this.first = true;
